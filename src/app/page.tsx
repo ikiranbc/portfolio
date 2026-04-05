@@ -3,7 +3,7 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    name: "Smart Home IoT Platform",
+    name: "Smart Home IoT Platforms",
     description: "A comprehensive dashboard for managing smart home devices with real-time data visualization and automated routines.",
     image: "/project1.png",
     link: "#"
