@@ -1,65 +1,98 @@
 import Image from "next/image";
 
+const projects = [
+  {
+    id: 1,
+    name: "Smart Home IoT Platform",
+    description: "A comprehensive dashboard for managing smart home devices with real-time data visualization and automated routines.",
+    image: "/project1.png",
+    link: "#"
+  },
+  {
+    id: 2,
+    name: "Task Management Pro",
+    description: "A minimalist mobile-first task manager with advanced categorization, reminders, and team collaboration features.",
+    image: "/project2.png",
+    link: "#"
+  },
+  {
+    id: 3,
+    name: "Library Management System",
+    description: "A basic library management system to let you not to read books. Your mother fucker.",
+    image: "/library.png",
+    link: "#"
+  },
+  {
+    id: 4,
+    name: "Library Management System part 2",
+    description: "A basic library management system to let you not to read books. Your mother fucker.",
+    image: "/library.png",
+    link: "#"
+  }
+
+];
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <div className="background-ornament">
+        <div className="glow-spot one"></div>
+        <div className="glow-spot two"></div>
+      </div>
+
+      <main className="main-container">
+        {/* --- Hero Section --- */}
+        <section className="hero">
+          <div className="profile-img-container">
+            <Image 
+              src="/profile.png" 
+              alt="Kiran BC" 
+              width={180} 
+              height={180} 
+              className="profile-img"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          </div>
+          <h1 className="name">Kiran BC.</h1>
+          <p className="role">Fullstack Developer</p>
+          <p className="bio">
+            I build high-performance, beautiful web applications with a focus on 
+            modern user experiences and scalable architecture. Something beautiful 
+            is always in the works. I will be giving everything in the future.
+          </p>
+        </section>
+
+        {/* --- Projects Section --- */}
+        <section id="projects">
+          <h2 className="section-title">Selected Projects</h2>
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <div key={project.id} className="project-card">
+                <Image 
+                  src={project.image} 
+                  alt={project.name} 
+                  width={400} 
+                  height={240} 
+                  className="project-thumb"
+                />
+                <div className="project-info">
+                  <h3 className="project-name">{project.name}</h3>
+                  <p className="project-desc">{project.description}</p>
+                  <a href={project.link} className="project-link">
+                    View Project &rarr;
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
+
+      <footer>
+        <div className="main-container">
+          <p>&copy; {new Date().getFullYear()} Kiran BC. Built with Next.js & Passion.</p>
+        </div>
+      </footer>
+    </>
   );
 }
