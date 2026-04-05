@@ -44,20 +44,20 @@ export default function Home() {
         {/* --- Hero Section --- */}
         <section className="hero">
           <div className="profile-img-container">
-            <Image 
-              src="/profile.png" 
-              alt="Kiran BC" 
-              width={180} 
-              height={180} 
+            <Image
+              src="/profile.png"
+              alt="Kiran BC"
+              width={180}
+              height={180}
               className="profile-img"
               priority
             />
           </div>
           <h1 className="name">Kiran BC.</h1>
-          <p className="role">Fullstack Developer</p>
+          <p className="role">Fullstack Developer & Backend Engineer</p>
           <p className="bio">
-            I build high-performance, beautiful web applications with a focus on 
-            modern user experiences and scalable architecture. Something beautiful 
+            I build high-performance, beautiful web applications with a focus on
+            modern user experiences and scalable architecture. Something beautiful
             is always in the works. I will be giving everything in the future.
           </p>
         </section>
@@ -68,11 +68,11 @@ export default function Home() {
           <div className="projects-grid">
             {projects.map((project) => (
               <div key={project.id} className="project-card">
-                <Image 
-                  src={project.image} 
-                  alt={project.name} 
-                  width={400} 
-                  height={240} 
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={400}
+                  height={240}
                   className="project-thumb"
                 />
                 <div className="project-info">
