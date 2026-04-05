@@ -28,7 +28,14 @@ const projects = [
     description: "A basic library management system to let you not to read books. Your mother fucker.",
     image: "/library.png",
     link: "#"
-  }
+  },
+  { id: 5,
+    name: "Hospital Management System 1",
+    description: "A basic hospital facilities",
+    image: "/hospital.png",
+    link: "#"
+
+}
 
 ];
 
